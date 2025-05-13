@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Evelyn's Portfolio</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		
+		<link rel="stylesheet" href="../index.css">
+		<link rel="stylesheet" href="japanese.css">
+		<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+		<script src="../bg.js"></script>
+		
+		<!-- MathJax
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		-->
+	</head>
+	<body>
+		<div class="step_bu_div">
+			<button type="button" onclick="next_bg('../')">Step</button>
+		</div>
+		<article>
+			<i><a href="../index.html">Home</a> / <a href="../javascript.html">JavaScript</a> / <a href="japanese.html">Japanese</a></i>
+			<span style="float: right;">
+				<i><a href="https://github.com/digit112/">On Github</a></i>
+			</span>
+			
+			<h1 class="portfolio_header"><i>Learn Japanese: Write-up</i></h1>
+			
+			<p>Writeups are written in the past tense even while the project is being worked on, so that they read like a retrospective....</p>
+			
+			<p>This was a very fun project to work on. It is based on an older and much simpler project of mine which had no settings, within which I would make changes to the source code in order to adjust the test. Each question group corresponds to a dictionary in the source code with the kana/kanji as keys and the expected answers as values. QuestionGroup objects are constructed and arranged into a tree hierarchy, which the source code uses to generate the cascading list at the top of the page.</p>
+			
+			<p>Originally, I had the idea of having each node in this tree calculate sums of weights from their children for the purposes of choosing questions. That way, I would be able to uniformly choose a question by descending the tree only once, which would be very performant. However, the "Question Window", which reduces the set of available questions and increases it over time, become a necessary feature, and couldn't be properly used with the tree. So instead, an array of active questions is maintained and updated each time a question is generated. The array includes all selected questions, and only the first few can actually be chosen as per the window size.</p>
+			
+			<p>The user is being graded, although an attempt is made to keep the page from feeling like an oppressive test and more like flash cards. The grades are  used to increase the chance of problematic questions being picked  (in adaptive mode) and to determine whether the question window size can be increased (if Use Window is checked).</p>
+			
+			<p>I have wondered whether working on the project has done more for my knowledge of kana than using it has. For sure, it requires some testing by other people.</p>
+		</article>
+	</body>
+</html>
